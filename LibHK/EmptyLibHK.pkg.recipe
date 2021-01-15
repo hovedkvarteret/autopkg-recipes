@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Recipe description</string>
+	<key>Identifier</key>
+	<string>no.hovedkvarteret.pkg.EmptyLibHK</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>EmptyLibHK</string>
+		<key>VERSION</key>
+		<string>1.0</string>
+		<key>PKG_ID</key>
+		<string>no.hovedkvarteret.EmptyLibHK</string>
+	</dict>
+	<key>MiniumumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>Create a test</string>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/empty</string>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Library</key>
+					<string>0775</string>
+					<key>Library/Hovedkvarteret</key>
+					<string>0775</string>
+				</dict>
+			</dict>
+		</dict>
+		
+		<dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/empty</string>
+				<key>pkg_request</key>
+				<dict>
+					<!--key>pkgroot</key>
+					<string>value</string-->
+					<!--key>pkgdir</key>
+					<string>value</string-->
+					<key>pkgname</key>
+					<string>%NAME%-%VERSION%</string>
+					<key>pkgtype</key>
+					<string>flat</string>
+					<key>id</key>
+					<string>%PKG_ID%</string>
+					<key>version</key>
+					<string>%VERSION%</string>
+					<key>resources</key>
+					<string>%RECIPE_DIR%/Resources/</string>
+					<key>scripts</key>
+					<string>%RECIPE_DIR%/Scripts/</string>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>path</key>
+							<string>/Library</string>
+							<key>user</key>
+							<string>root</string>
+							<key>group</key>
+							<string>wheel</string>
+						</dict>
+						<dict>
+							<key>path</key>
+							<string>/Library/Hovedkvarteret</string>
+							<key>user</key>
+							<string>root</string>
+							<key>group</key>
+							<string>wheel</string>
+						</dict>
+						
+					</array>
+					
+					
+				</dict>
+				
+			</dict>
+		</dict>
+		
+		
+	</array>
+</dict>
+</plist>

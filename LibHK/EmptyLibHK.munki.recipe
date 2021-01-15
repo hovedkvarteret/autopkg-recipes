@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Create an empty folder in Libraries for enterprise files.
+		Intended as a minimum payload script carrier, as opposed to a nopkg.</string>
+	<key>Identifier</key>
+	<string>no.hovedkvarteret.munki.EmptyLibHK</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>EmptyLibHK</string>
+		<key>PKG_ID</key>
+		<string>no.hovedkvarteret.EmptyLibHK</string>
+        <key>MUNKI_DISPLAYNAME</key>
+        <string>Library Hovedkvarteret</string>
+		<key>MUNKI_REPO</key>
+		<string>/Users/klaus/stage/munki/repo</string>
+        <key>MUNKI_CATALOG</key>
+        <string>testing</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Scripts</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>Hovedkvarteret</string>
+        <key>MUNKI_ICON</key>
+        <string></string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>scripts</string>
+        <key>MUNKI_DESCRIPTION</key>
+        <string>Core command-line tools used by Managed Software Center.</string>
+	</dict>
+	<key>MiniumumVersion</key>
+	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>no.hovedkvarteret.pkg.EmptyLibHK</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+            <dict>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>pkginfo</key>
+                <dict>
+                    <key>catalogs</key>
+                    <array>
+                        <string>%MUNKI_CATALOG%</string>
+                    </array>
+                    <key>category</key>
+                    <string>%MUNKI_CATEGORY%</string>
+                    <key>description</key>
+                    <string>%MUNKI_DESCRIPTION%</string>
+                    <key>developer</key>
+                    <string>%MUNKI_DEVELOPER%</string>
+                    <key>display_name</key>
+                    <string>%MUNKI_DISPLAYNAME%</string>
+                    <key>icon_name</key>
+                    <string>%MUNKI_ICON%</string>
+                    <key>minimum_os_version</key>
+                    <string>10.11</string>
+                    <key>name</key>
+                    <string>%NAME%</string>
+                    <key>requires</key>
+                    <array/>
+                        <!--string></string>
+                    </array-->
+                    <key>unattended_install</key>
+                    <true/>
+                </dict>
+            </dict>
+		</dict>
+	</array>
+</dict>
+</plist>
