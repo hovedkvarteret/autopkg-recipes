@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Frame.io Transfer.</string>
 	<key>Identifier</key>
-	<string>no.hovedkvarteret.gitlab.download.Frame.ioTransfer</string>
+	<string>com.github.hovedkvarteret.download.Frame.ioTransfer</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -20,10 +20,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>url</key>
+				<string>https://www.frame.io/transfer</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>re_pattern</key>
+				<string>(https://transferapp\.frame\.io/Frame\.io-Transfer/[0-9a-f]{32}/darwin/x64/Frame\.io%20Transfer-.*\.dmg)</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://transferapp.frame.io/Frame.io-Transfer/6ab0c27d61d7cf8793b0357e6533ed81/darwin/x64/Frame.io%20Transfer-1.1.4.dmg</string>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
