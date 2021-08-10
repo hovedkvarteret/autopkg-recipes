@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>no.hovedkvarteret.gitlab.download.Frame.ioTransfer</string>
+	<string>com.github.hovedkvarteret.download.Frame.ioTransfer</string>
 	<key>Process</key>
 	<array>
 		<dict>
