@@ -56,11 +56,7 @@ EXE="${APP_PATH}/Contents/Resources/installer/Install Vectorworks2022.app/Conten
 # Directory to install Vectorworks and resources
 INSTALL_DIR="%VW_INSTALL_DIR%"
 # Company associated with license
-COMPANY="%VW_COMPANY%"
-# Vectorworks serial number
 SERIAL="%VW_SERIAL%"
-# User associated with license
-USERNAME="%VW_USERNAME%"
 
 # Silent install
 if [ -d "$APP_PATH" ]; then
