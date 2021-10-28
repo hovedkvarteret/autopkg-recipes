@@ -16,16 +16,12 @@ Because of the fact the install is done via an installer app, we have to make so
         <string>apps/vectorworks</string>
         <key>NAME</key>
         <string>Vectorworks2022NNA</string>
-        <key>VW_COMPANY</key>
-        <string>ENTER COMPANY NAME HERE</string>
         <key>VW_INSTALL_DIR</key>
         <string>/Applications/Vectorworks 2022</string>
         <key>VW_SERIAL</key>
         <string>ENTER SERIAL NUMBER HERE</string>
         <key>VW_TMP_DIR</key>
         <string>/private/tmp</string>
-        <key>VW_USERNAME</key>
-        <string>ENTER USER NAME HERE</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -68,7 +64,7 @@ USERNAME="%VW_USERNAME%"
 
 # Silent install
 if [ -d "$APP_PATH" ]; then
-	"$EXE" --unattendedmodeui none --mode unattended --Serial "$SERIAL" --UserName "$USERNAME" --CompName "$COMPANY" --installdir "$INSTALL_DIR"
+	"$EXE" --unattendedmodeui none --mode unattended --Serial "$SERIAL" --installdir "$INSTALL_DIR"
 	result=$(/bin/echo $?)
 else
 	/bin/echo "Vectorworks installer app at APP_PATH does not exist."
