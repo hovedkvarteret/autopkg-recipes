@@ -32,14 +32,6 @@
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
-			<key>postinstall_script</key>
-			<string>#!/bin/zsh
-			
-/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
-			<key>uninstall_script</key>
-			<string>#!/bin/zsh
-			
-/Library/Application\ Support/Logitech.localized/LogiOptionsPlus/logioptionsplus_agent.app/Contents/Frameworks/logioptionsplus_updater.app/Contents/MacOS/logioptionsplus_updater --full --uninstall</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -66,25 +58,33 @@
 				<dict>
 					<key>version</key>
 					<string>%version%</string>
+					<key>installs</key>
+					<array>
+						<dict>
+							<key>CFBundleIdentifier</key>
+							<string>com.logi.optionsplus</string>
+							<key>CFBundleName</key>
+							<string>logioptionsplus</string>
+							<key>CFBundleShortVersionString</key>
+							<string>%version%</string>
+							<key>path</key>
+							<string>/Applications/logioptionsplus.app</string>
+							<key>type</key>
+							<string>application</string>
+							<key>version_comparison_key</key>
+							<string>CFBundleVersion</string>
+						</dict>
+					</array>
+					<key>postinstall_script</key>
+					<string>#!/bin/zsh
+					
+/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
+					<key>uninstall_script</key>
+					<string>#!/bin/zsh
+					
+/Library/Application\ Support/Logitech.localized/LogiOptionsPlus/logioptionsplus_agent.app/Contents/Frameworks/logioptionsplus_updater.app/Contents/MacOS/logioptionsplus_updater --full --uninstall</string>
 				</dict>
 			</dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>installs_item_paths</key>
-				<array>
-					<string>/Applications/logioptionsplus.app</string>
-				</array>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiInstallsItemsCreator</string>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>MunkiPkginfoMerger</string>
 		</dict>
