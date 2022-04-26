@@ -35,11 +35,11 @@
 			<key>postinstall_script</key>
 			<string>#!/bin/zsh
 			
-			/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
+/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
 			<key>uninstall_script</key>
 			<string>#!/bin/zsh
 			
-			/Library/Application\ Support/Logitech.localized/LogiOptionsPlus/logioptionsplus_agent.app/Contents/Frameworks/logioptionsplus_updater.app/Contents/MacOS/logioptionsplus_updater --full --uninstall</string>
+/Library/Application\ Support/Logitech.localized/LogiOptionsPlus/logioptionsplus_agent.app/Contents/Frameworks/logioptionsplus_updater.app/Contents/MacOS/logioptionsplus_updater --full --uninstall</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
