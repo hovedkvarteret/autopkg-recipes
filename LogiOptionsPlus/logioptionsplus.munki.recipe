@@ -80,7 +80,7 @@
 					<key>postinstall_script</key>
 					<string>#!/bin/zsh
 
-/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
+/tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log > /dev/null</string>
 					<key>uninstall_script</key>
 					<string>#!/bin/zsh
 
