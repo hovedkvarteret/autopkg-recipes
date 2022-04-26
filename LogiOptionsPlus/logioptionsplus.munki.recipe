@@ -65,7 +65,7 @@
 							<string>com.logi.optionsplus</string>
 							<key>CFBundleName</key>
 							<string>logioptionsplus</string>
-							<key>CFBundleShortVersionString</key>
+							<key>CFBundleVersion</key>
 							<string>%version%</string>
 							<key>path</key>
 							<string>/Applications/logioptionsplus.app</string>
@@ -77,11 +77,11 @@
 					</array>
 					<key>postinstall_script</key>
 					<string>#!/bin/zsh
-					
+
 /tmp/logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer --quiet --update No --log /tmp/logioptionsinstaller_log</string>
 					<key>uninstall_script</key>
 					<string>#!/bin/zsh
-					
+
 /Library/Application\ Support/Logitech.localized/LogiOptionsPlus/logioptionsplus_agent.app/Contents/Frameworks/logioptionsplus_updater.app/Contents/MacOS/logioptionsplus_updater --full --uninstall</string>
 				</dict>
 			</dict>
