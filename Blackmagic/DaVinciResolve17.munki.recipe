@@ -32,6 +32,8 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
         <string>DaVinciResolve17</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/%NAME%</string>
+        <key>INSTALL_PATH</key>
+        <string>/Applications/DaVinci Resolve/DaVinci Resolve.app</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -167,7 +169,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
                             <key>CFBundleShortVersionString</key>
                             <string>%version%</string>
                             <key>path</key>
-                            <string>/Applications/DaVinci Resolve/DaVinci Resolve.app</string>
+                            <string>%INSTALL_PATH%</string>
                             <key>type</key>
                             <string>application</string>
                             <key>version_comparison_key</key>
