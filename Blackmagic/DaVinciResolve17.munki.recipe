@@ -25,7 +25,7 @@ as a cache location for Resolve. If this installer is run while a user is logged
 this user's home will be used, and if run at the loginwindow, the root user's home will be.
 </string>
     <key>Identifier</key>
-    <string>com.github.timsutton.munki.davinciresolve17</string>
+    <string>com.github.hovedkvarteret.munki.davinciresolve17</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
