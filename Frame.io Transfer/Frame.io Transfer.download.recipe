@@ -25,7 +25,7 @@
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>re_pattern</key>
-				<string>(https://transferapp\.frame\.io/Frame\.io-Transfer/[0-9a-f]{32}/\_index/[[:graph:]]+/darwin/x64/Frame\.io%20Transfer-.*\.dmg)</string>
+				<string>(https://transferapp\.frame\.io/Frame\.io-Transfer/[0-9a-f]{32}/\_index/*.*.*/darwin/x64/Frame\.io%20Transfer-.*\.dmg)</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
