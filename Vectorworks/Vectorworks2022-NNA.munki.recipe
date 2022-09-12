@@ -47,14 +47,15 @@ Because of the fact the install is done via an installer app, we have to make so
             </array>
             <key>name</key>
             <string>%NAME%</string>
-            <key>postinstall_script</key>
-            <string>#!/bin/bash
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
 
 # Path to locally-copied Vectorworks install application
 APP_PATH="%VW_TMP_DIR%/Vectorworks 2022 Installer.app"
 EXE="${APP_PATH}/Contents/Resources/installer/Install Vectorworks2022.app/Contents/MacOS/installbuilder.sh"
 # Directory to install Vectorworks and resources
 INSTALL_DIR="%VW_INSTALL_DIR%"
+VWTMP="/private/tmp/Vectorworks 2022.app"
 # Company associated with license
 SERIAL="%VW_SERIAL%"
 
@@ -67,12 +68,35 @@ else
 	result=1
 fi
 
-# If install successful, delete installer app
+# If install successful, delete installer and old app
 if [ "$result" = 0 ]; then
-	/bin/rm -rf "$APP_PATH"
+	/bin/rm -rf "$APP_PATH" "$VWTMP"
+fi
+
+lastUserName="$(defaults read /Library/Preferences/com.apple.loginwindow lastUserName)"
+lastUser="$(/usr/bin/id -u $lastUserName)"
+
+# Change owner of installed application to the user who last logged on 
+if [ "$lastUser" -gt 0 ]; then
+	/usr/sbin/chown -R "${lastUserName}:staff" "${INSTALL_DIR}"
+else
+	echo "$lastUser - $lastUserName" &gt;&gt; /tmp/vw.log
 fi
 
 exit $result</string>
+	<key>preinstall_script</key>
+	<string>#!/bin/bash
+
+VWAPP="/Applications/Vectorworks 2022/Vectorworks 2022.app"
+VWTMP="/private/tmp/Vectorworks 2022.app"
+
+if ! pgrep -x Vectorworks &gt;/dev/null
+        then
+        echo not running, moving app
+        mv "$VWAPP" "$VWTMP"
+        else
+        echo app running, exiting
+fi</string>
 			<key>uninstall_method</key>
 			<string>uninstall_script</string>
 			<key>uninstall_script</key>
