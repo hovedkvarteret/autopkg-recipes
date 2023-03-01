@@ -11,7 +11,7 @@ Because of the fact the install is done via an installer app, we have to make so
     <key>Input</key>
     <dict>
         <key>MUNKI_CATEGORY</key>
-        <string>Design</string>
+        <string>CAD</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/vectorworks</string>
         <key>NAME</key>
@@ -61,7 +61,7 @@ SERIAL="%VW_SERIAL%"
 
 # Silent install
 if [ -d "$APP_PATH" ]; then
-	"$EXE" --unattendedmodeui none --mode unattended --Serial "$SERIAL" --installdir "$INSTALL_DIR"
+	"$EXE" --unattendedmodeui none --mode unattended --Serial "$SERIAL" --installdir "$INSTALL_DIR" --LDFChoice licenseID
 	result=$(/bin/echo $?)
 else
 	/bin/echo "Vectorworks installer app at APP_PATH does not exist."
@@ -91,11 +91,14 @@ VWAPP="/Applications/Vectorworks 2023/Vectorworks 2023.app"
 VWTMP="/private/tmp/Vectorworks 2023.app"
 
 if ! pgrep -x Vectorworks &gt;/dev/null
-        then
-        echo not running, moving app
-        mv "$VWAPP" "$VWTMP"
-        else
-        echo app running, exiting
+	then
+		# app not running
+		if [ -d "$VWAPP" ]; then
+			# older version exists, moving it
+			mv "$VWAPP" "$VWTMP"
+		else
+		echo app not running or older version exists in place, exiting
+	fi
 fi</string>
 			<key>uninstall_method</key>
 			<string>uninstall_script</string>
