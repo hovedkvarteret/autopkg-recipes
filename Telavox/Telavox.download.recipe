@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Telavox.</string>
 	<key>Identifier</key>
@@ -21,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-*.dmg</string>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://s3.eu-west-2.amazonaws.com/flow-desktop/</string>
+				<string>https://deopappmanager.telavox.com/flow/download/mac/latest</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
