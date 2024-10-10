@@ -57,7 +57,7 @@ EXE="${APP_PATH}/Contents/Resources/installer/Install Vectorworks2025.app/Conten
 INSTALL_DIR="%VW_INSTALL_DIR%"
 VWTMP="/private/tmp/Vectorworks 2025.app"
 # Company associated with license
-SERIAL="input_serial_here"
+SERIAL="%VW_SERIAL%"
 
 # Silent install
 if [ -d "$APP_PATH" ]; then
