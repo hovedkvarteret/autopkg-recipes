@@ -37,7 +37,7 @@
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: Teradici Corporation (RU4LW7W32C)</string>
+					<string>Developer ID Installer: TERADICI CO (RU4LW7W32C)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
