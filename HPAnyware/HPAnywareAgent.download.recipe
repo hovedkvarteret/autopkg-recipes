@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
 				<key>url</key>
-				<string>https://dl.teradici.com/ZNwmCrrkbmD0aLQV/pcoip-agent/raw/names/pcoip-agent-graphics-pkg/versions/latest/pcoip-agent-graphics_latest.pkg</string>
+				<string>https://dl.anyware.hp.com/ojw3zJQZX4DECIFX/pcoip-agent/raw/names/pcoip-agent-graphics-pkg/versions/latest/pcoip-agent-graphics_latest.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
