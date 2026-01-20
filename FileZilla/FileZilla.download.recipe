@@ -19,7 +19,7 @@ Note the architecture values are not the same as the FileZilla nightly recipe.
 		<key>ARCH</key>
 		<string>arm64</string>
 		<key>RE_PATTERN</key>
-		<string>&lt;a href=\"(?P&lt;url&gt;http[s]?.*?(?P&lt;filename&gt;FileZilla_(?P&lt;version&gt;[\d.]+)_macos-%ARCH%.*?\.tar\.bz2).*?)\"</string>
+		<string><a[^>]+href=\\"(?P<url>https?://[^"']*?(?P<filename>FileZilla_(?P<version>[0-9.]+)_(?:macosx?|macos)-%ARCH%(?:\.app)?\.tar\.bz2))\\"</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.1</string>
